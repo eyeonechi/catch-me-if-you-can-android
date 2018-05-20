@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COMP30022 IT Project - Semester 2 2017
+     House Tarth - William Voor Thursday 16.15
+     | Ivan Ken Weng Chee         eyeonechi  ichee@student.unimelb.edu.au
+     | Jussi Eemeli Silventoinen  JussiSil   jsilventoine@student.unimelb.edu.au
+     | Minghao Wang               minghaooo  minghaow1@student.unimelb.edu.au
+     | Vikram Gopalan-Krishnan    vikramgk   vgopalan@student.unimelb.edu.au
+     | Ziren Xiao                 zirenxiao  zirenx@student.unimelb.edu.au -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="31sp"
+        android:text="Name"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Send"
+        android:theme="@style/AccentButton" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:hint="Enter Message"
+        android:id="@+id/input"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:maxLines="2"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/fab"
+        android:dividerHeight="16dp"
+        android:divider="@android:color/transparent"
+        android:id="@+id/list_of_messages"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
+        />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/colorDividerColor"
+        android:layout_below="@+id/list_of_messages"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp" />
+
+</RelativeLayout>

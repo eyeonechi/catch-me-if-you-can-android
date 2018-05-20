@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COMP30022 IT Project - Semester 2 2017
+     House Tarth - William Voor Thursday 16.15
+     | Ivan Ken Weng Chee         eyeonechi  ichee@student.unimelb.edu.au
+     | Jussi Eemeli Silventoinen  JussiSil   jsilventoine@student.unimelb.edu.au
+     | Minghao Wang               minghaooo  minghaow1@student.unimelb.edu.au
+     | Vikram Gopalan-Krishnan    vikramgk   vgopalan@student.unimelb.edu.au
+     | Ziren Xiao                 zirenxiao  zirenx@student.unimelb.edu.au -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="25dip"
+    >
+
+    <ImageView
+        android:id="@+id/ProfilePicture"
+        android:contentDescription="profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@mipmap/temp_placeholder" />
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/ProfilePicture"
+        android:layout_marginTop="20dp"
+        android:textSize="10sp"
+        android:text="NAME" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/title1"
+        android:layout_marginTop="-10dp"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:maxLength="25"
+        android:text="Enter Name Here" />
+
+    <TextView
+        android:id="@+id/Username"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/Name"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:text="/@username" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/Online"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:text="LOCATION" />
+
+    <TextView
+        android:id="@+id/Online"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/Username"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
+        android:text="Online Status Unknown" />
+
+    <EditText
+        android:id="@+id/Location"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/title2"
+        android:layout_marginTop="-10dp"
+        android:textSize="15sp"
+        android:maxLength="15"
+        android:text="Enter Location Here" />
+
+
+    <TextView
+        android:id="@+id/title4"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/Location"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:text="EMAIL" />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/title4"
+        android:layout_marginTop="-10dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:maxLength="30"
+        android:text="Enter Email" />
+
+    <TextView
+        android:id="@+id/title3"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/Email"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:text="STATUS MESSAGE" />
+
+    <EditText
+        android:id="@+id/Status"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/title3"
+        android:layout_marginTop="-10dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:maxLength="45"
+        android:text="Add a custom message for all to see!" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="createOnClick"
+        android:text="Update Profile"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/Status"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/AccentButton"
+        />
+
+</RelativeLayout>
