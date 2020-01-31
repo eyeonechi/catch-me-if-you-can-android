@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema house_tarth
+-- Schema oz1zlgdxpvc102hu
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema house_tarth
+-- Schema oz1zlgdxpvc102hu
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `house_tarth` DEFAULT CHARACTER SET utf8 ;
-USE `house_tarth` ;
+CREATE SCHEMA IF NOT EXISTS `oz1zlgdxpvc102hu` DEFAULT CHARACTER SET utf8 ;
+USE `oz1zlgdxpvc102hu` ;
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`account`
+-- Table `oz1zlgdxpvc102hu`.`account`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`account` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`account` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
@@ -33,9 +33,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`user_chatlog`
+-- Table `oz1zlgdxpvc102hu`.`user_chatlog`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`user_chatlog` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`user_chatlog` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(300) NOT NULL,
   `to_user` INT NOT NULL,
@@ -46,16 +46,16 @@ CREATE TABLE IF NOT EXISTS `house_tarth`.`user_chatlog` (
   INDEX `fk_user_chatlog_account1_idx` (`to_user` ASC),
   CONSTRAINT `fk_user_chatlog_account1`
     FOREIGN KEY (`to_user`)
-    REFERENCES `house_tarth`.`account` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`friend`
+-- Table `oz1zlgdxpvc102hu`.`friend`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`friend` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`friend` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `self_id` INT NOT NULL,
   `friend_id` INT NOT NULL,
@@ -65,21 +65,21 @@ CREATE TABLE IF NOT EXISTS `house_tarth`.`friend` (
   INDEX `fk_friend_account2_idx` (`friend_id` ASC),
   CONSTRAINT `fk_friend_account1`
     FOREIGN KEY (`self_id`)
-    REFERENCES `house_tarth`.`account` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_friend_account2`
     FOREIGN KEY (`friend_id`)
-    REFERENCES `house_tarth`.`account` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`game`
+-- Table `oz1zlgdxpvc102hu`.`game`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`game` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`game` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
@@ -88,9 +88,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`account_in_game`
+-- Table `oz1zlgdxpvc102hu`.`account_in_game`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`account_in_game` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`account_in_game` (
   `game_id` INT NOT NULL,
   `account_id` INT NOT NULL,
   `is_owner` INT NOT NULL,
@@ -101,21 +101,21 @@ CREATE TABLE IF NOT EXISTS `house_tarth`.`account_in_game` (
   INDEX `fk_game_has_account_game1_idx` (`game_id` ASC),
   CONSTRAINT `fk_game_has_account_game1`
     FOREIGN KEY (`game_id`)
-    REFERENCES `house_tarth`.`game` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`game` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_game_has_account_account1`
     FOREIGN KEY (`account_id`)
-    REFERENCES `house_tarth`.`account` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `house_tarth`.`waypoint`
+-- Table `oz1zlgdxpvc102hu`.`waypoint`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `house_tarth`.`waypoint` (
+CREATE TABLE IF NOT EXISTS `oz1zlgdxpvc102hu`.`waypoint` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `x` DOUBLE NOT NULL,
   `y` DOUBLE NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `house_tarth`.`waypoint` (
   INDEX `fk_waypoint_game1_idx` (`game_id` ASC),
   CONSTRAINT `fk_waypoint_game1`
     FOREIGN KEY (`game_id`)
-    REFERENCES `house_tarth`.`game` (`id`)
+    REFERENCES `oz1zlgdxpvc102hu`.`game` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
