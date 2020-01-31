@@ -1,6 +1,6 @@
 // Constant
 // Database settings
-DATABASE_HOST = "	g4yltwdo6z0izlm6.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+DATABASE_HOST = "g4yltwdo6z0izlm6.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
 DATABASE_USERNAME = "nncotp8cwdniay9i";
 DATABASE_PASSWORD = "dbhl6za9u4jhtm64";
 DATABASE_DATABASE = "oz1zlgdxpvc102hu";
