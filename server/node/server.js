@@ -14,8 +14,7 @@ process.setMaxListeners(0);
 
 // Variables
 var WebSocketServer = WebSocket.Server,
-    wss = new WebSocketServer();
-    // wss = new WebSocketServer({ port: SERVER_PORT });
+    wss = new WebSocketServer({ port: process.env.PORT || SERVER_PORT });
 var clients = [];
 
 //console.log('Server Starts At Port %d', SERVER_PORT);
